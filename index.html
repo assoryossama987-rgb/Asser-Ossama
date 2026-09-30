@@ -3,163 +3,110 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#080a0d">
-<title>Asser Ossama — Student • Communication • Volleyball</title>
+<meta name="theme-color" content="#120805">
+<title>Asser Ossama</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+:root{--gold:#ffad4d;--cream:#ffe6c8}
 body{
-  min-height:100vh;color:#fff;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  background:
-    radial-gradient(circle at 50% 12%,rgba(255,170,80,.24),transparent 28%),
-    linear-gradient(rgba(4,6,9,.48),rgba(4,6,9,.94)),
-    radial-gradient(circle at 70% 25%,#8d542f 0,transparent 22%),
-    #080a0d;
+ min-height:100vh;color:#fff;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+ background:
+ radial-gradient(circle at 50% 8%,#ff9a3d 0%,#b84412 18%,#42170b 43%,#100806 72%,#050506 100%);
+ background-attachment:fixed;
 }
-body:before{
-  content:"";position:fixed;inset:0;z-index:-1;opacity:.22;
-  background:
-    linear-gradient(135deg,transparent 0 45%,rgba(255,255,255,.06) 45.2% 45.5%,transparent 45.7%),
-    repeating-linear-gradient(145deg,transparent 0 80px,rgba(255,255,255,.025) 81px 82px);
-}
-.container{width:min(940px,92%);margin:auto;padding:42px 0 55px}
-.top{display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:25px}
-.signature{font-family:cursive;font-size:clamp(2.2rem,6vw,4.4rem);line-height:.9;font-style:italic}
-.motto-side{text-align:right;text-transform:uppercase;letter-spacing:.28em;font-size:.68rem;line-height:1.8;opacity:.82}
-.profile{text-align:center;margin-top:-15px}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background:
+ radial-gradient(circle at 50% 25%,rgba(255,169,76,.23),transparent 28%),
+ linear-gradient(180deg,rgba(255,125,30,.10),transparent 42%,rgba(0,0,0,.28));}
+.wrap{width:min(940px,92%);margin:auto;padding:38px 0 50px;position:relative}
+.header{display:flex;justify-content:space-between;align-items:flex-start}
+.signature{font-family:cursive;font-size:clamp(2.5rem,6vw,4.5rem);line-height:.88;font-style:italic;color:#fff1dd}
+.side{text-align:right;text-transform:uppercase;letter-spacing:.28em;font-size:.68rem;line-height:1.8;opacity:.88}
+.profile{text-align:center;margin-top:-5px}
 .avatar{
-  width:190px;height:190px;border-radius:50%;margin:0 auto 18px;
-  display:grid;place-items:center;border:2px solid rgba(255,210,150,.8);
-  background:linear-gradient(145deg,#d78b4d,#29201b 50%,#0a0d11);
-  box-shadow:0 0 35px rgba(224,143,72,.22),inset 0 0 35px rgba(0,0,0,.4);
-  overflow:hidden;position:relative;
+ width:195px;height:195px;margin:0 auto 18px;border-radius:50%;overflow:hidden;
+ border:2px solid #ffd08e;box-shadow:0 0 34px rgba(255,157,63,.55),0 0 75px rgba(255,104,15,.22);
+ background:#1a0c07;
 }
-.avatar:after{content:"AS";font-size:4rem;font-weight:800;letter-spacing:-.08em;opacity:.86}
-.name{font-size:clamp(2rem,6vw,3.7rem);font-weight:800;letter-spacing:-.04em}
-.roles{margin-top:8px;font-size:.95rem;letter-spacing:.28em;text-transform:uppercase;opacity:.9}
-.divider{width:68px;height:2px;background:#e7c59c;margin:23px auto}
-.quote{font-size:1rem;letter-spacing:.18em;text-transform:uppercase;opacity:.82}
-
-.links{margin-top:35px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.avatar img{width:100%;height:100%;object-fit:cover;object-position:center 43%;display:block}
+h1{font-size:clamp(2.15rem,6vw,3.8rem);letter-spacing:-.045em;text-shadow:0 3px 18px rgba(0,0,0,.45)}
+.roles{margin-top:8px;text-transform:uppercase;letter-spacing:.28em;font-size:.95rem}
+.rule{width:68px;height:2px;background:var(--cream);margin:23px auto;box-shadow:0 0 10px rgba(255,166,75,.7)}
+.quote{text-transform:uppercase;letter-spacing:.18em;font-size:1rem;opacity:.86}
+.links{margin-top:34px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .card{
-  text-decoration:none;color:white;min-height:108px;padding:22px;
-  border:1px solid rgba(255,255,255,.22);border-radius:22px;
-  background:linear-gradient(135deg,rgba(25,29,34,.88),rgba(8,11,15,.72));
-  backdrop-filter:blur(12px);display:flex;align-items:center;gap:18px;
-  transition:.2s transform,.2s border-color,.2s box-shadow;
+ color:#fff;text-decoration:none;min-height:108px;padding:20px;display:flex;align-items:center;gap:18px;
+ border:1px solid rgba(255,181,98,.42);border-radius:22px;
+ background:linear-gradient(135deg,rgba(28,22,19,.82),rgba(7,8,9,.68));
+ backdrop-filter:blur(13px);box-shadow:inset 0 1px rgba(255,255,255,.05);
+ transition:.2s transform,.2s border-color,.2s box-shadow;
 }
-.card:hover{transform:translateY(-3px);border-color:rgba(255,214,166,.7);box-shadow:0 12px 35px rgba(0,0,0,.28)}
-.icon{width:56px;height:56px;border-radius:15px;display:grid;place-items:center;font-size:1.55rem;font-weight:800;flex:none;background:#20252b}
-.card:nth-child(1) .icon{background:linear-gradient(135deg,#ffb12e,#e83e72,#7d35d9)}
-.card:nth-child(2) .icon,.card:nth-child(3) .icon{background:#12b95d}
-.card:nth-child(4) .icon{background:#ffd52a;color:#111}
-.card:nth-child(5) .icon{background:#1477d4}
-.card:nth-child(6) .icon{background:#d54d4d}
-.card:nth-child(7){grid-column:1/-1}
-.card:nth-child(7) .icon{background:#713de0}
-.card h2{font-size:1.08rem;margin-bottom:5px}
-.card p{font-size:.9rem;color:#b9bec5}
-.arrow{margin-left:auto;font-size:1.8rem;opacity:.8}
+.card:hover{transform:translateY(-3px);border-color:rgba(255,194,118,.9);box-shadow:0 14px 38px rgba(0,0,0,.35),0 0 24px rgba(255,123,24,.12)}
+.icon{width:56px;height:56px;border-radius:15px;display:grid;place-items:center;flex:none;font-weight:800;font-size:1.5rem}
+.card h2{font-size:1.08rem}
+.arrow{margin-left:auto;font-size:1.8rem;opacity:.85}
+.instagram .icon{background:linear-gradient(135deg,#ffb52f,#e83275,#6b36d9)}
+.whatsapp .icon,.phone .icon{background:#12b95d}
+.snapchat .icon{background:#ffd72d;color:#111}
+.linkedin .icon{background:#0a72c9}
+.gmail .icon{background:#fff}
+.cv .icon{background:#713de0}
+.cv{grid-column:1/-1}
 .actions{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px}
-.action{
-  border:1px solid rgba(255,220,180,.55);border-radius:20px;padding:19px;
-  background:rgba(17,18,19,.72);color:#fff;font-size:1rem;font-weight:700;cursor:pointer;
-}
-.action:hover{background:rgba(45,39,33,.8)}
-.footer{text-align:center;margin-top:45px;opacity:.7}
-.footer .tag{font-family:cursive;font-size:1.4rem;word-spacing:12px}
-.footer .ball{font-size:2.2rem;margin-top:14px}
-.small{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;margin-top:18px}
-
+.action{padding:19px;border:1px solid rgba(255,208,150,.72);border-radius:20px;background:rgba(22,15,12,.65);color:#fff;font-weight:700;font-size:1rem;cursor:pointer}
+.footer{text-align:center;margin-top:44px;opacity:.78}
+.tag{font-family:cursive;font-size:1.35rem;word-spacing:12px}
+.ball{font-size:2.3rem;margin-top:12px;color:#ffd08e}
 @media(max-width:700px){
-  .container{padding-top:25px}
-  .top{gap:12px}
-  .avatar{width:145px;height:145px}.avatar:after{font-size:3rem}
-  .roles{font-size:.68rem;letter-spacing:.15em;line-height:1.8}
-  .links,.actions{grid-template-columns:1fr}
-  .card,.card:nth-child(7){grid-column:auto;min-height:92px}
-  .motto-side{font-size:.55rem}
+ .wrap{padding-top:24px}.avatar{width:150px;height:150px}.roles{font-size:.68rem;letter-spacing:.14em;line-height:1.8}
+ .links,.actions{grid-template-columns:1fr}.cv{grid-column:auto}.card{min-height:90px}.side{font-size:.55rem}
 }
 </style>
 </head>
 <body>
-<main class="container">
-  <div class="top">
-    <div class="signature">Asser<br>Ossama</div>
-    <div class="motto-side">Discipline<br>turns dreams<br>into reality</div>
-  </div>
+<main class="wrap">
+<header class="header">
+ <div class="signature">Asser<br>Ossama</div>
+ <div class="side">Discipline<br>turns dreams<br>into reality</div>
+</header>
 
-  <section class="profile">
-    <div class="avatar" aria-label="Profile photo placeholder"></div>
-    <h1 class="name">Asser Ossama</h1>
-    <div class="roles">Student &nbsp; • &nbsp; Communication &nbsp; • &nbsp; Volleyball</div>
-    <div class="divider"></div>
-    <p class="quote">“A better me, every day.”</p>
-  </section>
+<section class="profile">
+ <div class="avatar"><img src="profile.jpg" alt="Asser Ossama"></div>
+ <h1>Asser Ossama</h1>
+ <div class="roles">Student &nbsp; • &nbsp; Communication &nbsp; • &nbsp; Volleyball</div>
+ <div class="rule"></div>
+ <p class="quote">“A better me, every day.”</p>
+</section>
 
-  <section class="links">
-    <a class="card" href="https://instagram.com/asser._.ossama" target="_blank" rel="noopener">
-      <div class="icon">◎</div><div><h2>Instagram</h2><p>asser._.ossama</p></div><span class="arrow">›</span>
-    </a>
+<section class="links">
+ <a class="card instagram" href="https://instagram.com/asser._.ossama" target="_blank" rel="noopener"><div class="icon">◎</div><h2>Instagram</h2><span class="arrow">›</span></a>
+ <a class="card whatsapp" href="https://wa.me/201557319335" target="_blank" rel="noopener"><div class="icon">◔</div><h2>WhatsApp</h2><span class="arrow">›</span></a>
+ <a class="card phone" href="tel:+201557319335"><div class="icon">☎</div><h2>Phone</h2><span class="arrow">›</span></a>
+ <a class="card snapchat" href="https://www.snapchat.com/add/asser_ossama20" target="_blank" rel="noopener"><div class="icon">👻</div><h2>Snapchat</h2><span class="arrow">›</span></a>
+ <a class="card linkedin" href="https://www.linkedin.com/in/asser-ossama-2487053b2" target="_blank" rel="noopener"><div class="icon">in</div><h2>LinkedIn</h2><span class="arrow">›</span></a>
+ <a class="card gmail" href="mailto:asserossama18@gmail.com">
+  <div class="icon" aria-label="Gmail">
+   <svg viewBox="0 0 48 48" width="38" height="38"><path fill="#EA4335" d="M5 11.5 24 26l19-14.5v25.2c0 2-1.6 3.6-3.6 3.6H8.6C6.6 40.3 5 38.7 5 36.7z"/><path fill="#4285F4" d="M5 11.5 24 26l4.1-3.1L5 7.8z"/><path fill="#34A853" d="M43 11.5 24 26l-4.1-3.1L43 7.8z"/><path fill="#FBBC04" d="M5 7.8 24 22.4 43 7.8v3.7L24 26 5 11.5z"/></svg>
+  </div><h2>Gmail</h2><span class="arrow">›</span>
+ </a>
+ <a class="card cv" href="CV.pdf" target="_blank" rel="noopener"><div class="icon">▤</div><h2>My CV</h2><span class="arrow">›</span></a>
+</section>
 
-    <a class="card" href="https://wa.me/201557319335" target="_blank" rel="noopener">
-      <div class="icon">◔</div><div><h2>WhatsApp</h2><p>01557319335</p></div><span class="arrow">›</span>
-    </a>
+<div class="actions">
+ <button class="action" onclick="saveContact()">＋ &nbsp; Save Contact</button>
+ <button class="action" onclick="shareProfile()">↗ &nbsp; Share Profile</button>
+</div>
 
-    <a class="card" href="tel:+201557319335">
-      <div class="icon">☎</div><div><h2>Phone</h2><p>01557319335</p></div><span class="arrow">›</span>
-    </a>
-
-    <a class="card" href="https://www.snapchat.com/add/asser_ossama20" target="_blank" rel="noopener">
-      <div class="icon">👻</div><div><h2>Snapchat</h2><p>asser_ossama20</p></div><span class="arrow">›</span>
-    </a>
-
-    <a class="card" href="#" onclick="alert('Add your LinkedIn URL in index.html');return false;">
-      <div class="icon">in</div><div><h2>LinkedIn</h2><p>My professional profile</p></div><span class="arrow">›</span>
-    </a>
-
-    <a class="card" href="mailto:asserossama18@gmail.com">
-      <div class="icon">✉</div><div><h2>Email</h2><p>asserossama18@gmail.com</p></div><span class="arrow">›</span>
-    </a>
-
-    <a class="card" href="#" onclick="alert('Add your CV file/link in index.html');return false;">
-      <div class="icon">▤</div><div><h2>My CV</h2><p>View / Download</p></div><span class="arrow">›</span>
-    </a>
-  </section>
-
-  <div class="actions">
-    <button class="action" onclick="saveContact()">＋ &nbsp; Save Contact</button>
-    <button class="action" onclick="shareProfile()">↗ &nbsp; Share Profile</button>
-  </div>
-
-  <footer class="footer">
-    <div class="tag">Student &nbsp; × &nbsp; Communication &nbsp; × &nbsp; Volleyball</div>
-    <div class="ball">◯</div>
-    <div class="small">Made for Asser Ossama</div>
-  </footer>
+<footer class="footer"><div class="tag">Student &nbsp; × &nbsp; Communication &nbsp; × &nbsp; Volleyball</div><div class="ball">◯</div></footer>
 </main>
-
 <script>
 function saveContact(){
-  const vcard = `BEGIN:VCARD
-VERSION:3.0
-FN:Asser Ossama
-TEL;TYPE=CELL:+201557319335
-EMAIL:asserossama18@gmail.com
-URL:https://instagram.com/asser._.ossama
-END:VCARD`;
-  const blob = new Blob([vcard],{type:"text/vcard"});
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement("a"); a.href=url; a.download="Asser-Ossama.vcf"; a.click();
-  URL.revokeObjectURL(url);
+ const v=`BEGIN:VCARD\nVERSION:3.0\nFN:Asser Ossama\nTEL;TYPE=CELL:+201557319335\nEMAIL:asserossama18@gmail.com\nURL:https://www.linkedin.com/in/asser-ossama-2487053b2\nEND:VCARD`;
+ const b=new Blob([v],{type:"text/vcard"}),u=URL.createObjectURL(b),a=document.createElement("a");
+ a.href=u;a.download="Asser-Ossama.vcf";a.click();URL.revokeObjectURL(u);
 }
 async function shareProfile(){
-  if(navigator.share){
-    await navigator.share({title:"Asser Ossama",text:"Student • Communication • Volleyball",url:location.href});
-  }else{
-    await navigator.clipboard.writeText(location.href);
-    alert("Profile link copied!");
-  }
+ if(navigator.share){await navigator.share({title:"Asser Ossama",text:"Student • Communication • Volleyball",url:location.href});}
+ else{await navigator.clipboard.writeText(location.href);alert("Profile link copied!");}
 }
 </script>
 </body>
